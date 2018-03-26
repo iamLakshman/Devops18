@@ -51,8 +51,8 @@ systemctl restart httpd &>>$LOG
 
 VALIDATE $? "Restarting the webserver"
 
-yum install gcc httpd-devel -y &>>$LOG
-VALIDATE $? "Installing gcc,httpd-devel"
+yum install gcc httpd-devel,java -y &>>$LOG
+VALIDATE $? "Installing gcc,httpd-devel,java"
 
 if [ -f /opt/$CONN_TAR_FILE ]; then
     SKIP "Downloading Mod_Jk"
