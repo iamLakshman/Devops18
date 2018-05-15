@@ -144,6 +144,14 @@ sed -i -e '$ i <Resource name="jdbc/TestDB" auth="Container" type="javax.sql.Dat
 
 VALIDATE $? "Configuring Context.xml"
 
+cd ../bin
+
+sh shutdown.sh &>>$LOG
+
+sh startup.sh &>>$LOG
+
+VALIDATE $? "Restarting Tomcat"
+
 yum install mariadb mariadb-server -y &>>$LOG
 VALIDATE $? "Installind Mariadb"
 
@@ -166,15 +174,6 @@ grant all privileges on studentapp.* to 'student'@'localhost' identified by 'stu
 mysql < /tmp/student.sql
 
 VALIDATE $? "Creating Database"
-
-cd ../bin
-
-sh shutdown.sh &>>$LOG
-
-sh startup.sh &>>$LOG
-
-VALIDATE $? "Restarting Tomcat"
-
 
 
 
