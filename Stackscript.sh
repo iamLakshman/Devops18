@@ -52,7 +52,7 @@ yum install java -y &>>$LOG
 
 VALIDATE $? "installing Java"
 
-cd /tomcat/
+cd /opt/
 
 if [ -f $TOMCAT_TAR ]; then
 	SKIP "Downloading TOMCAT"
@@ -68,7 +68,7 @@ else
 	VALIDATE $? "Extracting TOMCAT"
 fi
 
-cd /tomcat/$TOMCAT_DIR/webapps
+cd /opt/$TOMCAT_DIR/webapps
 
 rm -rf *;
 
