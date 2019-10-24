@@ -66,7 +66,7 @@ else
 	VALIDATE $? "Extracting tomcat"
 fi
 
-cd  tomcat/apache-tomcat-9.0.27/webapps/
+cd ..tomcat/apache-tomcat-9.0.27/webapps/
 
 wget $STUDENT_URL &>> $LOG
 
