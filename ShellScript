@@ -85,7 +85,7 @@ cd ../conf
 
 sed -i -e '/TestDB/ d' context.xml
 
-sed -i -e '$ i <Resource name="jdbc/TestDB" auth="Container" type="javax.sql.DataSource" maxTotal="100" maxIdle="30" maxWaitMillis="10000" username="student" password="student@1" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://10.128.0.9:3306/studentapp"/>' context.xml
+sed -i -e '$ i <Resource name="jdbc/TestDB" auth="Container" type="javax.sql.DataSource" maxTotal="100" maxIdle="30" maxWaitMillis="10000" username="student" password="student@1" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/studentapp"/>' context.xml
 
 VALIDATE $? "Editing context.xml"
 
@@ -156,7 +156,8 @@ yum install mariadb mariadb-server -y &>>$LOG
 
 VALIDATE $? "Installing mariadb"
 
-systemctl restart mariadb &>>$LOG
+systemctl start mariadb &>>$LOG
+systemctl enable mariadb &>>$LOG
 
 VALIDATE $? "Restarting mariadb"
 
