@@ -2,10 +2,10 @@
 DATE=$(date +%F)
 USER_ID=$(id -u)
 LOG=/tmp/stack.log
-TOMCAT_URL=http://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.19/bin/apache-tomcat-9.0.19.tar.gz
+TOMCAT_URL=https://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz
 TOMCAT_FILE=$(echo $TOMCAT_URL | cut -d "/" -f9) #echo $TOMCAT_URL | awk -F "/" '{print $NF}'
 TOMCAT_FOLDER=$(echo $TOMCAT_FILE | sed -e 's/.tar.gz//')
-STUDENT_URL=https://github.com/devops2k18/DevOpsSeptember/raw/master/APPSTACK/student.war
+STUDENT_URL=https://raw.githubusercontent.com/iamLakshman/Devops18/master/student.war
 MYSQL_URL=https://github.com/devops2k18/DevOpsSeptember/raw/master/APPSTACK/mysql-connector-java-5.1.40.jar
 MYSQL_JAR=$(echo $MYSQL_URL | awk -F "/" '{print $NF}')
 
